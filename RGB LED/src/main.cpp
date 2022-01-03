@@ -14,7 +14,8 @@ void setup()
 
 void loop()
 {
-  // put your main code here, to run repeatedly : digitalWrite(redPin, HIGH);
+  // put your main code here, to run repeatedly :
+  digitalWrite(redPin, HIGH);
   delay(500);
   digitalWrite(greenPin, HIGH);
   delay(500);
