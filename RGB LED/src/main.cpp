@@ -15,16 +15,16 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly :
-  analogWrite(redPin, 30);
+  analogWrite(redPin, 100);
   delay(500);
-  analogWrite(greenPin, 200);
+  analogWrite(greenPin, 25);
   delay(500);
-  analogWrite(bluePin, 40);
+  analogWrite(bluePin, 10);
   delay(500);
-  analogWrite(redPin, 150);
+  analogWrite(redPin, 0);
   delay(500);
   analogWrite(greenPin, 0);
   delay(500);
-  analogWrite(bluePin, 250);
+  analogWrite(bluePin, 0);
   delay(500);
 }
