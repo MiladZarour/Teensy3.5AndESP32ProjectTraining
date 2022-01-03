@@ -14,17 +14,16 @@ void setup()
 
 void loop()
 {
-  // put your main code here, to run repeatedly:
-  // digitalWrite(redPin, HIGH);
-  // delay(500);
-  // digitalWrite(greenPin, HIGH);
-  // delay(500);
-  // digitalWrite(bluePin, HIGH);
-  // delay(500);
-  // digitalWrite(redPin, LOW);
-  // delay(500);
-  // digitalWrite(greenPin, LOW);
-  // delay(500);
-  // digitalWrite(bluePin, LOW);
-  // delay(500);
+  // put your main code here, to run repeatedly : digitalWrite(redPin, HIGH);
+  delay(500);
+  digitalWrite(greenPin, HIGH);
+  delay(500);
+  digitalWrite(bluePin, HIGH);
+  delay(500);
+  digitalWrite(redPin, LOW);
+  delay(500);
+  digitalWrite(greenPin, LOW);
+  delay(500);
+  digitalWrite(bluePin, LOW);
+  delay(500);
 }
