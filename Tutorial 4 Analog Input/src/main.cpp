@@ -2,10 +2,15 @@
 
 void setup()
 {
-  // put your setup code here, to run once:
+  Serial.begin(38400);
 }
+
+int val;
 
 void loop()
 {
-  // put your main code here, to run repeatedly:
+  val = analogRead(A0);
+  Serial.print("analog 0 is: ");
+  Serial.println(val);
+  delay(250);
 }
