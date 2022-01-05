@@ -1,36 +1,35 @@
-#include <Metro.h>
 #include <Arduino.h>
+#include <Bounce.h>
+#include <Metro.h>
 
-#define DURATION 100
-#define BUTTON_PIN 33
+const int buttonPin = 33;
 
-uint32_t count = 0;
-uint32_t previous_count = 0;
-uint8_t previous_state = HIGH;
-Metro timer = Metro(DURATION);
+static uint32_t count = 0;
+static uint32_t previous_count = 0;
+static Metro metro = Metro(100);
+Bounce pushbutton = Bounce(buttonPin, 5); // 10 ms debounce
 
 void setup()
 {
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(buttonPin, INPUT_PULLUP);
   Serial.begin(9600);
   delay(2000);
+  Serial.println("Pushbutton Bounce library test:");
 }
 
 void loop()
 {
-  uint8_t current_state = digitalRead(BUTTON_PIN);
-
-  if (current_state != previous_state)
+  if (pushbutton.update())
   {
-    if (current_state == LOW)
+    if (pushbutton.fallingEdge())
     {
-      count++;
+      count = count + 1;
     }
-    previous_state = current_state;
   }
-  else if ((count != previous_count) && timer.check())
+
+  else if ((count != previous_count) && metro.check())
   {
-    Serial.printf("count: %d\n", count);
     previous_count = count;
+    Serial.printf("Count : %d\n", count);
   }
 }
