@@ -6,6 +6,10 @@
 		{
 			"name": "exercise1",
 			"path": ".."
+		},
+		{
+			"name": "Exercise2",
+			"path": "..\\..\\Exercise2"
 		}
 	],
 	"settings": {}
