@@ -14,7 +14,7 @@
 #define RED_PIN (2)
 #define GREEN_PIN (3)
 #define BLUE_PIN (4)
-static Metro metro = Metro(150);
+static Metro metro = Metro(10000);
 
 void setup()
 {
@@ -26,14 +26,17 @@ void loop()
 {
   if (metro.check())
   {
-    uint8_t red = random(255);
-    uint8_t green = random(255);
-    uint8_t blue = random(255);
+    // Generate random red, green and blue numbers in the range of 0 to 255
+
+    uint8_t red = random(100);
+    uint8_t green = random(100);
+    uint8_t blue = random(100);
 
     analogWrite(RED_PIN, red);
-    analogWrite(GREEN_PIN, 0);
+    analogWrite(GREEN_PIN, green);
     analogWrite(BLUE_PIN, blue);
-    // Generate random red, green and blue numbers in the range of 0 to 255
+
+    Serial.printf("Color : 0x%02X%02X%02X\n", red, green, blue);
 
     //
   }
